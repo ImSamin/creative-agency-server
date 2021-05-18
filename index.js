@@ -27,10 +27,10 @@ app.get('/', (req, res) => {
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-    const ordersCollection = client.db(`${process.env.DB_Name}`).collection("orders");
-    const serviceCollection = client.db(`${process.env.DB_Name}`).collection("services");
-    const reviewCollection = client.db(`${process.env.DB_Name}`).collection("review");
-    const adminCollection = client.db(`${process.env.DB_Name}`).collection("admin")
+    const ordersCollection = client.db(`${process.env.DB_NAME}`).collection("orders");
+    const serviceCollection = client.db(`${process.env.DB_NAME}`).collection("services");
+    const reviewCollection = client.db(`${process.env.DB_NAME}`).collection("review");
+    const adminCollection = client.db(`${process.env.DB_NAME}`).collection("admin")
     app.post("/addOrders", (req, res) => {
         const orders = req.body;
 
